@@ -17,7 +17,7 @@ const Footer = () => {
         { name: "Hardware Update" },
     ]
     return (
-        <footer className="footer-area clear-both mt-5">
+        <footer id="contact" className="footer-area clear-both mt-5 pb-3">
             <div className="container pt-5">
                 <div className="row py-5">
                     <div className="col-md-6">
@@ -36,7 +36,7 @@ const Footer = () => {
                         </ul>
                         <div className="mt-5">
                             <h6>Call now</h6>
-                            <button className="btn btn-brand">+565465164164</button>
+                            <button className="btn btn-brand btn-danger">+565465164164</button>
                         </div>
                     </FooterCol>
                 </div>

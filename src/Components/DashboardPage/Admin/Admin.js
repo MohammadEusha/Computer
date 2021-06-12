@@ -5,6 +5,7 @@ import { UserContext } from '../../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from '../Sidebar/Sidebar';
+import Swal from 'sweetalert2';
 
 const Admin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -30,7 +31,16 @@ const Admin = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(serviceData)
         })
-            .then(res => console.log('server side', res))
+            .then(res => {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'New Service Has Been Added',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                console.log('server side', res)
+            })
     };
 
 
@@ -49,7 +59,7 @@ const Admin = () => {
             });
     }
     return (
-        <div className="row bg-light">
+        <div style={{ backgroundColor: "#12161f", height: "1200px", color: "white" }} className="row">
             <div className="col-md-3 col-sm-6 col-12">
                 <Sidebar></Sidebar>
             </div>
@@ -60,22 +70,22 @@ const Admin = () => {
                 <form className="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
                     <div className="col-md-6">
                         <label for="title" className="form-label"><h4>Service Name</h4></label>
-                        <input name="title" ref={register} className="form-control" />
+                        <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Service Name" name="title" ref={register} className="form-control text-light" />
                     </div>
                     <div className="col-md-6">
                         <label for="description" className="form-label"><h4>Service Details</h4></label>
-                        <input name="description" className="form-control" ref={register} />
+                        <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Service Details" name="description" className="form-control text-light" ref={register} />
                     </div>
                     <div className="col-md-6 mt-3">
                         <label for="price" className="form-label"><h4>Price</h4></label>
-                        <input name="price" className="form-control" ref={register} />
+                        <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Service Price" name="price" className="form-control text-light" ref={register} />
                     </div>
                     <div className="col-md-6 mt-3">
                         <label className="form-label"><h4>Insert Service Image</h4></label>
-                        <input className="form-control" type="file" onChange={handleImageUpload} id="formFile" />
+                        <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Name" className="form-control text-light" type="file" onChange={handleImageUpload} id="formFile" />
                     </div>
-                    <div className="col-12 d-flex justify-content-end">
-                        <button className="mt-4 btn btn-secondary btn-lg " type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Service</button>
+                    <div className="col-12 d-grid ">
+                        <button className="mt-4 btn btn-danger btn-lg btn-block" type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Service</button>
                     </div>
                 </form>
             </div>

@@ -16,7 +16,7 @@ const ManageServices = () => {
 
     }, [manageServices])
     return (
-        <div className="row bg-light">
+        <div style={{ backgroundColor: "#12161f", color: "white", height: "1200px" }} className="row">
             <div className="col-md-3 col-sm-6 col-12">
                 <Sidebar></Sidebar>
             </div>

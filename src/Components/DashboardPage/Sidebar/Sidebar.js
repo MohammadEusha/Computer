@@ -1,4 +1,4 @@
-import { faCartArrowDown, faComments, faGripHorizontal, faHome, faServer, faSortAmountDownAlt, faUserMinus, faUsersCog, faUserShield } from '@fortawesome/free-solid-svg-icons';
+import { faCartArrowDown, faComments, faGripHorizontal, faHome, faServer, faSortAmountDownAlt, faUsersCog, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';

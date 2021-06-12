@@ -11,20 +11,20 @@ import Review from '../Review/Review';
 
 const Home = () => {
     return (
-        <div className="bg-light">
+        <div style={{ backgroundColor: "#12161f", color: "white" }}>
             <div className="header bg-light">
                 <Navbar></Navbar>
                 <Header></Header>
             </div>
-            <div >
+            <div className="p-4">
                 <About></About>
                 <Repair></Repair>
                 <ServiceAreas></ServiceAreas>
                 <ExpertTeam></ExpertTeam>
                 <Review></Review>
-                <Footer></Footer>
-            </div>
 
+            </div>
+            <Footer></Footer>
         </div>
     );
 };

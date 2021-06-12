@@ -4,8 +4,8 @@ import piter from '../../../Images/Piter.png'
 import watson from '../../../Images/watson.png'
 const ExpertTeam = () => {
     return (
-        <div className="mt-5">
-            <div className="text-center">
+        <div id="expert" className="py-5">
+            <div className="text-center py-5">
                 <h1 style={{ fontSize: "65px" }}>Our Expert Team</h1>
             </div>
             <div className="row d-flex justify-content-center text-end">

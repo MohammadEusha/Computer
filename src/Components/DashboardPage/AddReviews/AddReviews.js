@@ -5,6 +5,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
 import Sidebar from '../Sidebar/Sidebar';
+import Swal from 'sweetalert2';
 
 const AddReviews = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -28,7 +29,16 @@ const AddReviews = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reviewData)
         })
-            .then(res => console.log('server side', res))
+            .then(res => {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Thanks For Your Valuable Review.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                console.log('server side', res)
+            })
     };
 
 
@@ -47,8 +57,8 @@ const AddReviews = () => {
             });
     }
     return (
-        <div >
-            <div className="row bg-light ">
+        <div style={{ backgroundColor: "#12161f", height: "1200px", color: "white" }}>
+            <div className="row ">
                 <div className="col-md-3 col-sm-6 col-12">
                     <Sidebar></Sidebar>
                 </div>
@@ -59,22 +69,22 @@ const AddReviews = () => {
                     <form className="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
                         <div className="col-md-6">
                             <label for="name" className="form-label"><h4>Your Name</h4></label>
-                            <input name="name" ref={register} className="form-control" id="inputEmail4" />
+                            <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Name" name="name" ref={register} className="form-control text-light" id="inputEmail4" />
                         </div>
                         <div className="col-md-6">
                             <label for="from" className="form-label"><h4>Place You Live</h4></label>
-                            <input name="from" className="form-control" ref={register} id="inputPassword4" />
+                            <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Location" name="from" className="form-control text-light" ref={register} id="inputPassword4" />
                         </div>
                         <div className="col-md-6 mt-3">
                             <label for="quote" className="form-label"><h4>Your Review About Our Service </h4></label>
-                            <input name="quote" className="form-control" ref={register} id="inputEmail4" />
+                            <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Review" name="quote" className="form-control text-light" ref={register} id="inputEmail4" />
                         </div>
                         <div className="col-md-6 mt-3">
                             <label className="form-label"><h4>Insert Your Image</h4></label>
-                            <input className="form-control" type="file" onChange={handleImageUpload} id="formFile" />
+                            <input style={{ backgroundColor: "#050c1f" }} className="form-control text-light" type="file" onChange={handleImageUpload} id="formFile" />
                         </div>
-                        <div className="col-12 d-flex justify-content-end">
-                            <button className="mt-4 btn btn-secondary btn-lg " type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Reviews</button>
+                        <div className="col-12 d-grid ">
+                            <button className="mt-4 btn btn-danger btn-lg btn-block" type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Reviews</button>
                         </div>
                     </form>
                 </div>

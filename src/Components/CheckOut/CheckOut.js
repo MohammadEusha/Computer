@@ -1,15 +1,17 @@
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import React, { useContext, useEffect, useState } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useParams } from 'react-router';
 import { UserContext } from '../../App';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import Navbar from '../HomePage/Navbar/Navbar';
 import Payment from '../Payments/Payment/Payment';
+import './CheckOut.css'
+import Swal from 'sweetalert2';
 const CheckOut = () => {
     const { title } = useParams();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [services, setServices] = useState([])
+
 
 
     useEffect(() => {
@@ -33,43 +35,107 @@ const CheckOut = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert('Your Order Placed Successfully')
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Your Order Has Been Added Successfully.',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+
                 }
             })
     }
 
-    return (
-        <div>
-            <Navbar></Navbar>
-            <div className="row d-flex  m-5 p-5">
-                <div className="col-md-7" >
-                    <table className="table table-hover table-striped table-secondary">
-                        <thead>
-                            <tr>
-                                <th scope="col">Service</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="fw-bolder">{title}</td>
-                                <td className=" fw-bolder">{serviceType && serviceType.description}</td>
-                                <td className="fw-bolder">{serviceType && serviceType.price + '$'}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div className="col-md-12  d-flex justify-content-end">
-                        <button onClick={addToCart} className="btn btn-secondary btn-lg" ><FontAwesomeIcon icon={faCartPlus} /> Add To Cart</button>
+
+    const [orderedService, setOrderedService] = useState(false)
+    let display;
+    if (orderedService) {
+        display =
+            <div>
+                <Navbar></Navbar>
+                <div>
+                    <h3 className="mt-5 pt-5 text-center">Hi {loggedInUser.name}...Please Pay For Getting Your Services ....!!!!!</h3>
+                    <div className="d-grid text-center container mt-2">
+                        <button onClick={() => setOrderedService(!orderedService)} variant="secondary" className="btn-lg  btn-block btn-danger" block>Update Information</button>
                     </div>
                 </div>
-                <div className="col-md-5">
-                    <h3 className="mb-3">Please {loggedInUser.name}... Pay For Getting Your Services ....!!!!!</h3>
-                    <Payment></Payment>
-                </div>
+                <div style={{ paddingBottom: "210px" }} id="Contact" className=" mt-5 mb-5 pt-5" fluid>
+                    <div className=" row mt-5">
+                        <div className="col-md-2"></div>
+                        <div className="text-center col-md-4">
+                            <Payment></Payment>
 
+                        </div>
+                        <div className="col-md-4">
+
+                            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_yzoqyyqf.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                        </div>
+                        <div className="col-md-4"></div>
+                    </div>
+                </div>
             </div>
-        </div>
+    }
+    else {
+        display =
+            <div>
+                <Navbar></Navbar>
+                <div id="Contact" className=" my-5 pb-5 p-3" fluid>
+                    <div className="row mt-5">
+                        <div className="col-md-7 mt-5 pt-5">
+                            <table className="table mt-2 table-hover table-striped table-secondary">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Service</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className="fw-bolder">{title}</td>
+                                        <td className=" fw-bolder">{serviceType && serviceType.description}</td>
+                                        <td className="fw-bolder">{serviceType && serviceType.price + '$'}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div className="col-md-12 d-grid">
+                                <button onClick={addToCart} className="btn btn-danger btn-lg" ><FontAwesomeIcon icon={faCartPlus} /> Add To Cart</button>
+                            </div>
+                        </div>
+                        <div className="col-md-4"  >
+                            <div style={{ marginTop: "100px" }} id="booking-area" className="booking-form ">
+                                <div className="input-group ">
+                                    <label for="">Your Name</label>
+                                    <input className="inp-style text-light" type="text" name="" placeholder="Write Your Name" />
+                                </div>
+                                <div className="input-group">
+                                    <label for="">Your Phone Number</label>
+                                    <input className="inp-style text-light" type="text" name="" placeholder="Write Your Phone Number" />
+                                </div>
+                                <div className="input-group">
+                                    <label for="">Delivered Location</label>
+                                    <input className="inp-style text-light" type="text" name="" placeholder="Write Your Location" />
+                                </div>
+                                <div className="inputs">
+                                    <div className="input-group">
+                                        <label for="">Order Date</label>
+                                        <input className="inp-style text-light" type="date" name="" />
+                                    </div>
+                                </div>
+                                <div className="d-grid">
+                                    <button onClick={() => setOrderedService(!orderedService)} variant="secondary" className="btn-lg  btn-block btn-danger" block>Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    }
+    return (
+        <div style={{ backgroundColor: "#12161f", color: "white", height: "1150px" }}>
+            {display}
+        </div >
 
     );
 };

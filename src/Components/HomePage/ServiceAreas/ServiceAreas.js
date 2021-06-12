@@ -13,8 +13,8 @@ const ServiceAreas = () => {
     }, [])
 
     return (
-        <div className="mt-5">
-            <div className="text-center">
+        <div id="service" className="my-5 py-5">
+            <div className="text-center mt-5 pb-5">
                 <h1 style={{ fontSize: "65px" }}>Services We Provide</h1>
             </div>
 

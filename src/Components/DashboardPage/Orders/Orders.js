@@ -16,14 +16,14 @@ const Orders = () => {
         <div>
             <h1 className="mt-5 mb-5 text-center">HI {loggedInUser.name}...You Have Bought {orderServices.length} Service Total....!!!!!</h1>
 
-            <table className="table mt-5 table-light">
+            <table className="table mt-5 table-dark">
                 <thead>
                     <tr>
-                        <th className="text-dark text-left" scope="col">Sr No</th>
-                        <th className="text-dark" scope="col">Service Name</th>
-                        <th className="text-dark" scope="col">Orders Placed At</th>
-                        <th className="text-dark" scope="col">Price</th>
-                        <th className="text-dark" scope="col">Status</th>
+                        <th className="text-light text-left" scope="col">Sr No</th>
+                        <th className="text-light" scope="col">Service Name</th>
+                        <th className="text-light" scope="col">Orders Placed At</th>
+                        <th className="text-light" scope="col">Price</th>
+                        <th className="text-light" scope="col">Status</th>
                     </tr>
                 </thead>
                 <tbody>

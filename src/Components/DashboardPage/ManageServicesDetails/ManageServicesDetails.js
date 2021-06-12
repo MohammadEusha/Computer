@@ -1,6 +1,7 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const ManageServicesDetails = (props) => {
     const { _id, title, price, description } = props.services
@@ -10,12 +11,19 @@ const ManageServicesDetails = (props) => {
         })
             .then(res => res.json())
             .then(result => {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Service Has Been Deleted.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 console.log('deleted')
             })
         console.log(id)
     }
     return (
-        <ul className="list-group col-md-3  mt-3 m-1">
+        <ul className="list-group col-md-3 focus mt-3 m-1">
             <li className="list-group-item list-group-item-dark"><span className="fw-bolder text-dark">Service Name : {title} </span></li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Service Price : {price} $</span> </li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Service Description : {description}</span> </li>

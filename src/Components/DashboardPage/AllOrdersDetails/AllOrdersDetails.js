@@ -1,6 +1,7 @@
 import { faCheckCircle, faHourglassStart, faRocket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 
 const AllOrdersDetails = (props) => {
@@ -24,13 +25,20 @@ const AllOrdersDetails = (props) => {
         })
             .then(res => res.json())
             .then(result => {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Customer Order Status Has Been Updated.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 console.log(result)
             })
         console.log(status, id)
     }
     return (
 
-        <ul className="list-group col-md-3  mt-3 m-1">
+        <ul className="list-group focus col-md-3  mt-3 m-1">
             <li className="list-group-item list-group-item-dark"><span className="fw-bolder text-dark">Customer Name : {name} </span></li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Service Name : {title} </span> </li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Service Price : {price} $</span> </li>

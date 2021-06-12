@@ -18,12 +18,12 @@ const AllOrders = () => {
     }, [])
 
     return (
-        <div className="row bg-light">
+        <div style={{ backgroundColor: "#12161f", color: "white" }} className="row">
             <div className="col-md-3 col-sm-6 col-12">
                 <Sidebar></Sidebar>
             </div>
             <div className="col-md-9 col-sm-12 col-12">
-                <h1 className="mt-5 text-center">HI {loggedInUser.name}...You Have  Total  {allOrders.length} Orders Pending....!!!!!</h1>
+                <h1 className="mt-5">HI {loggedInUser.name}...You Have  Total  {allOrders.length} Orders Pending....!!!!!</h1>
 
                 <div className="row d-flex justify-content-start">
                     {
