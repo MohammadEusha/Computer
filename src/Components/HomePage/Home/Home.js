@@ -16,14 +16,14 @@ const Home = () => {
                 <Navbar></Navbar>
                 <Header></Header>
             </div>
-            <div className="p-4">
+            <div className="p-3">
                 <About></About>
                 <Repair></Repair>
                 <ServiceAreas></ServiceAreas>
                 <ExpertTeam></ExpertTeam>
-                <Review></Review>
 
             </div>
+            <Review></Review>
             <Footer></Footer>
         </div>
     );

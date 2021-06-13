@@ -54,7 +54,7 @@ const Login = () => {
                     style={{ height: "600px" }}
                     loop
                     autoplay></lottie-player>
-                <div className="d-grid text-center container px-5">
+                <div className="d-grid text-center container px-5 ">
                     <button onClick={handleGoogleSignIn} className="btn btn-danger btn-block btn-lg mt-1 mx-5"><FontAwesomeIcon icon={faUserPlus} /> Sign In With Google </button>
                 </div>
             </div>
