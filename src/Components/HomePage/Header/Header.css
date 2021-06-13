@@ -23,7 +23,13 @@
   height: 300px;
   width: 700px !important;
 }
-
+.color {
+  background: transparent;
+  color: white !important;
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;..");
+}
 @media (max-width: 600px) {
   .review {
     height: 300px;

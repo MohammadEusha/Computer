@@ -8,7 +8,17 @@ import '../ServiceAreas/ServiceAreas.css'
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
-
+    const [isSticky, setSticky] = useState(false);
+    const [isCollapsed, setCollapsed] = useState(null);
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                setSticky(true)
+            } else {
+                setSticky(false)
+            }
+        })
+    }, []);
 
     useEffect(() => {
         fetch('https://young-beach-67366.herokuapp.com/isAdmin', {
@@ -22,43 +32,44 @@ const Navbar = () => {
 
 
     return (
-        <nav container class="navbar  navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav className={(isSticky || isCollapsed) ? "navbar  navbar-expand-lg navbar-dark bg-dark fixed-top" : "navbar  navbar-expand-lg navbar-light color text-dark"}>
             <div class="container-fluid">
                 <div className="col-md-6 ">
                     <img className="transaction-area " style={{ height: "50px", }} src={logo} alt="" />
-                    <a className="navbar-brand ms-3 h1" href="#home">Computer Garage</a>
+                    <a className="navbar-brand color ms-3 h1" href="#home">Computer Garage</a>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <button onClick={
+                    () => setCollapsed(!isCollapsed ? 'show' : null)} class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav col-md-5 mb-2 mb-lg-0 h5">
+                    <ul class="navbar-nav col-md-5  mb-2 mb-lg-0 h5">
                         <li class="nav-item">
-                            <Link style={{ textDecoration: 'none' }} class="nav-link" to="/home">Home</Link>
+                            <Link style={{ textDecoration: 'none' }} class="nav-link color" to="/home">Home</Link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#about">About</a>
+                            <a class="nav-link color" aria-current="page" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#repair">Repair</a>
+                            <a class="nav-link color" href="#repair">Repair</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#service">Service</a>
+                            <a class="nav-link color" href="#service">Service</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#expert">Expert</a>
+                            <a class="nav-link color" href="#expert">Expert</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#reviews">Reviews</a>
+                            <a class="nav-link color" href="#reviews">Reviews</a>
                         </li>
                         <li class="nav-item">
-                            <Link style={{ textDecoration: 'none' }} class="nav-link" to="/checkOut/:title">CheckOut</Link>
+                            <Link style={{ textDecoration: 'none' }} class="nav-link color" to="/checkOut/:title">CheckOut</Link>
                         </li>
                         <li class="nav-item">
-                            <Link style={{ textDecoration: 'none' }} class="nav-link" to="/dashboard">Dashboard</Link>
+                            <Link style={{ textDecoration: 'none' }} class="nav-link color" to="/dashboard">Dashboard</Link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link color" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
