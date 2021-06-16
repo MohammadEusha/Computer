@@ -55,20 +55,18 @@ const CheckOut = () => {
             <div>
                 <Navbar></Navbar>
                 <div>
-                    <h3 className="mt-5 pt-5 text-center">Hi {loggedInUser.name}...Please Pay For Getting Your Services ....!!!!!</h3>
+                    <h3 className="mt-5 pt-5 text-center">Hi <span className="text-danger">{loggedInUser.name}</span>. Please Pay For Getting Your Services.If You Want To Update Your Information PLease Click On the Update Information Button.</h3>
                     <div className="d-grid text-center container mt-2">
                         <button onClick={() => setOrderedService(!orderedService)} variant="secondary" className="btn-lg  btn-block btn-danger" block>Update Information</button>
                     </div>
                 </div>
-                <div style={{ paddingBottom: "210px" }} id="Contact" className=" mt-5 mb-5 pt-5" fluid>
-                    <div className=" row mt-5">
-                        <div className="col-md-2"></div>
-                        <div className="text-center col-md-4">
+                <div id="Contact" className=" mb-5" fluid>
+                    <div className=" row mt-5 d-flex justify-content-center align-items-center">
+                        <div className="text-center col-md-6">
                             <Payment></Payment>
 
                         </div>
                         <div className="col-md-4">
-
                             <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_yzoqyyqf.json" background="transparent" speed="1" loop autoplay></lottie-player>
                         </div>
                         <div className="col-md-4"></div>
@@ -80,7 +78,7 @@ const CheckOut = () => {
         display =
             <div>
                 <Navbar></Navbar>
-                <div id="Contact" className=" my-5 pb-5 p-3" fluid>
+                <div id="Contact" className=" my-5 pb-5 p-3 ps-5" fluid>
                     <div className="row mt-5">
                         <div className="col-md-7 mt-5 pt-5">
                             <table className="table mt-2 table-hover table-striped table-secondary">
@@ -94,7 +92,7 @@ const CheckOut = () => {
                                 <tbody>
                                     <tr>
                                         <td className="fw-bolder">{title}</td>
-                                        <td className=" fw-bolder">{serviceType && serviceType.description}</td>
+                                        <td className="ps-4  fw-bolder">{serviceType && serviceType.description}</td>
                                         <td className="fw-bolder">{serviceType && serviceType.price + '$'}</td>
                                     </tr>
                                 </tbody>
@@ -133,10 +131,9 @@ const CheckOut = () => {
             </div>
     }
     return (
-        <div style={{ backgroundColor: "#12161f", color: "white", height: "1150px" }}>
+        <div style={{ backgroundColor: "#12161f", color: "white", height: "930px" }}>
             {display}
         </div >
-
     );
 };
 

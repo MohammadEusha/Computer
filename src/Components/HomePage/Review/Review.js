@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ReviewInfo from '../ReviewInfo/ReviewInfo';
-// import SwiperCore, { Autoplay, Pagination } from 'swiper';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/swiper-bundle.css';
-import ReactCarousel, { AFTER, CENTER, BEFORE } from "react-carousel-animated";
-import "react-carousel-animated/dist/style.css";
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+// import ReactCarousel, { AFTER, CENTER, BEFORE } from "react-carousel-animated";
+// import "react-carousel-animated/dist/style.css";
 
 const Review = () => {
-    // SwiperCore.use([Pagination, Autoplay]);
+    SwiperCore.use([Pagination, Autoplay]);
 
     const [reviews, setReviews] = useState([])
     useEffect(() => {
@@ -23,8 +23,8 @@ const Review = () => {
                 <div className="text-center">
                     <h1 style={{ fontSize: "65px" }} className="text-center py-5">Our Customers Reviews </h1>
                 </div>
-                <div>
-                    {/* <Swiper
+                <div className="row d-flex justify-content-center mb-5 pb-5">
+                    <Swiper
                         loop={true}
                         pagination={{ clickable: true }}
                         slidesPerView={1}
@@ -48,39 +48,16 @@ const Review = () => {
                         }}
                         spaceBetween={10}
                     >
-
                         {
                             reviews.map(review => {
                                 return (
                                     <SwiperSlide >
-                                        
+                                        <ReviewInfo review={review} key={review.name} />
                                     </SwiperSlide>
                                 )
                             })
                         }
-
-                    </Swiper> */}
-                    <ReactCarousel
-                        carouselConfig={{
-                            transform: {
-                                rotateY: {
-                                    [BEFORE]: () => "rotateY(25deg)",
-                                    [CENTER]: () => "rotateY(0deg)",
-                                    [AFTER]: () => "rotateY(-25deg)",
-                                },
-                            },
-                        }}
-
-                        containerBackgroundStyle={{
-                            filter: "blur(7px)",
-
-                        }}
-                        carouselHeight="500px"
-                    >
-                        {
-                            reviews.map(review => <ReviewInfo review={review}  ></ReviewInfo>)
-                        }
-                    </ReactCarousel>
+                    </Swiper>
                 </div>
             </div>
         </div>

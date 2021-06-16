@@ -9,7 +9,7 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../../App';
 import Navbar from '../../HomePage/Navbar/Navbar';
-
+import "./Login.css"
 
 const Login = () => {
     if (!firebase.apps.length) {
@@ -42,9 +42,9 @@ const Login = () => {
             });
     }
     return (
-        <div style={{ backgroundColor: '#12161f', height: "1200px" }}>
+        <div className="logIn">
             <Navbar></Navbar>
-            <div style={{ paddingTop: "100px" }} className="text-center">
+            <div className="text-center pt-5">
                 <div>
                     <h1 className="text-light  px-5 mx-5">Welcome To Computer Garage .Please Sign In With Your Google Account To See Your Ordered Services And To Confirm It...!!!!</h1>
                 </div>
