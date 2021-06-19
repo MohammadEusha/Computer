@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from '../Sidebar/Sidebar';
 import Swal from 'sweetalert2';
+import DashboardNavbar from '../Sidebar/Sidebar';
 
 const Admin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -59,13 +60,11 @@ const Admin = () => {
             });
     }
     return (
-        <div style={{ backgroundColor: "#12161f", height: "900px", color: "white" }} className="row">
-            <div className="col-md-3 col-sm-6 col-12">
-                <Sidebar></Sidebar>
-            </div>
-            <div className="col-md-7 col-sm-12 col-12 mt-5">
-                <div className="text-center">
-                    <h1>HI {loggedInUser.name}...Add Service Details Here ....!!!!</h1>
+        <div style={{ backgroundColor: "#12161f", height: "950px", color: "white" }} className="pt-5">
+            <DashboardNavbar></DashboardNavbar>
+            <div className="container mt-5">
+                <div className="text-center pt-5">
+                    <h1>HI <span className="text-danger">{loggedInUser.name}</span>...Add Service Details Here ....!!!!</h1>
                 </div>
                 <form className="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
                     <div className="col-md-6">

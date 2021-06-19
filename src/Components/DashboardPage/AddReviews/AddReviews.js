@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
 import Sidebar from '../Sidebar/Sidebar';
 import Swal from 'sweetalert2';
+import DashboardNavbar from '../Sidebar/Sidebar';
 
 const AddReviews = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -57,38 +58,37 @@ const AddReviews = () => {
             });
     }
     return (
-        <div style={{ backgroundColor: "#12161f", height: "950px", color: "white" }}>
-            <div className="row ">
-                <div className="col-md-3 col-sm-6 col-12">
-                    <Sidebar></Sidebar>
+        <div style={{ backgroundColor: "#12161f", height: "950px", color: "white" }} className="pt-5">
+            <DashboardNavbar></DashboardNavbar>
+
+
+            <div className="container pt-5">
+                <div className="text-center  pt-5">
+                    <h1>HI <span className="text-danger">{loggedInUser.name}</span>....Add Reviews Here ....!!!!</h1>
                 </div>
-                <div className="col-md-7 col-sm-12 col-12 mt-5">
-                    <div className="text-center">
-                        <h1>HI {loggedInUser.name}....Add Reviews Here ....!!!!</h1>
+                <form className="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="col-md-6">
+                        <label for="name" className="form-label"><h4>Your Name</h4></label>
+                        <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Name" name="name" ref={register} className="form-control text-light" id="inputEmail4" />
                     </div>
-                    <form className="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
-                        <div className="col-md-6">
-                            <label for="name" className="form-label"><h4>Your Name</h4></label>
-                            <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Name" name="name" ref={register} className="form-control text-light" id="inputEmail4" />
-                        </div>
-                        <div className="col-md-6">
-                            <label for="from" className="form-label"><h4>Place You Live</h4></label>
-                            <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Location" name="from" className="form-control text-light" ref={register} id="inputPassword4" />
-                        </div>
-                        <div className="col-md-6 mt-3">
-                            <label for="quote" className="form-label"><h4>Your Review About Our Service </h4></label>
-                            <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Review" name="quote" className="form-control text-light" ref={register} id="inputEmail4" />
-                        </div>
-                        <div className="col-md-6 mt-3">
-                            <label className="form-label"><h4>Insert Your Image</h4></label>
-                            <input style={{ backgroundColor: "#050c1f" }} className="form-control text-light" type="file" onChange={handleImageUpload} id="formFile" />
-                        </div>
-                        <div className="col-12 d-grid ">
-                            <button className="mt-4 btn btn-danger btn-lg btn-block" type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Reviews</button>
-                        </div>
-                    </form>
-                </div>
+                    <div className="col-md-6">
+                        <label for="from" className="form-label"><h4>Place You Live</h4></label>
+                        <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Location" name="from" className="form-control text-light" ref={register} id="inputPassword4" />
+                    </div>
+                    <div className="col-md-6 mt-3">
+                        <label for="quote" className="form-label"><h4>Your Review About Our Service </h4></label>
+                        <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Review" name="quote" className="form-control text-light" ref={register} id="inputEmail4" />
+                    </div>
+                    <div className="col-md-6 mt-3">
+                        <label className="form-label"><h4>Insert Your Image</h4></label>
+                        <input style={{ backgroundColor: "#050c1f" }} className="form-control text-light" type="file" onChange={handleImageUpload} id="formFile" />
+                    </div>
+                    <div className="col-12 d-grid ">
+                        <button className="mt-4 btn btn-danger btn-lg btn-block" type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Reviews</button>
+                    </div>
+                </form>
             </div>
+
         </div>
     );
 };

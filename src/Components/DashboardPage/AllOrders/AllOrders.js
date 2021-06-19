@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import AllOrdersDetails from '../AllOrdersDetails/AllOrdersDetails';
+import Dashboard from '../Dashboard/Dashboard';
+import DashboardNavbar from '../Sidebar/Sidebar';
 import Sidebar from '../Sidebar/Sidebar';
 
 
@@ -18,14 +20,14 @@ const AllOrders = () => {
     }, [])
 
     return (
-        <div style={{ backgroundColor: "#12161f", color: "white" }} className="row">
-            <div className="col-md-3 col-sm-6 col-12">
-                <Sidebar></Sidebar>
-            </div>
-            <div className="col-md-9 col-sm-12 col-12">
-                <h1 className="mt-5">HI {loggedInUser.name}...You Have  Total  {allOrders.length} Orders Pending....!!!!!</h1>
+        <div style={{ backgroundColor: "#12161f", color: "white" }} className="pt-5 pb-5">
 
-                <div className="row d-flex justify-content-start">
+            <DashboardNavbar></DashboardNavbar>
+
+            <div className="container mt-5 ">
+                <h1 className="pt-5 text-center">HI <span className="text-danger">{loggedInUser.name}</span>...You Have  Total  {allOrders.length} Orders Pending....!!!!!</h1>
+
+                <div className="row d-flex justify-content-center">
                     {
                         allOrders.map(allOrder => <AllOrdersDetails allOrder={allOrder}></AllOrdersDetails>)
                     }

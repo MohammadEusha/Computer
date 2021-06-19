@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import ManageServicesDetails from '../ManageServicesDetails/ManageServicesDetails';
+import DashboardNavbar from '../Sidebar/Sidebar';
 
 import Sidebar from '../Sidebar/Sidebar';
 
@@ -16,13 +17,13 @@ const ManageServices = () => {
 
     }, [manageServices])
     return (
-        <div style={{ backgroundColor: "#12161f", color: "white", height: "950px" }} className="row">
-            <div className="col-md-3 col-sm-6 col-12">
-                <Sidebar></Sidebar>
-            </div>
-            <div className="col-md-9 col-sm-12 col-12 mt-5">
-                <h1>HI {loggedInUser.name}...You Have Total {manageServices.length} Service ....!!!!!</h1>
-                <div className="row d-flex justify-content-start">
+        <div style={{ backgroundColor: "#12161f", color: "white", height: "950px" }} className="pt-5">
+
+            <DashboardNavbar></DashboardNavbar>
+
+            <div className="container mt-5">
+                <h1 className="text-center pt-5">HI <span className="text-danger">{loggedInUser.name}</span>...You Have Total {manageServices.length} Service ....!!!!!</h1>
+                <div className="row d-flex justify-content-center">
                     {
                         manageServices.map(services => <ManageServicesDetails services={services}></ManageServicesDetails>)
                     }

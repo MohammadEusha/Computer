@@ -31,6 +31,8 @@ const Navbar = () => {
     }, [loggedInUser.email])
 
 
+
+
     return (
         <nav className={(isSticky || isCollapsed) ? "navbar  navbar-expand-lg navbar-dark bg-dark fixed-top" : "navbar  navbar-expand-lg navbar-light color text-dark"}>
             <div class="container-fluid">
@@ -43,7 +45,7 @@ const Navbar = () => {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav col-md-5  mb-2 mb-lg-0 h5">
+                    <ul class="navbar-nav ms-auto  mb-2 mb-lg-0 h5">
                         <li class="nav-item">
                             <Link style={{ textDecoration: 'none' }} class="nav-link color" to="/home">Home</Link>
                         </li>
@@ -62,6 +64,11 @@ const Navbar = () => {
                         <li class="nav-item">
                             <a class="nav-link color" href="#reviews">Reviews</a>
                         </li>
+                        {isAdmin &&
+                            <li className="nav-item ">
+                                <Link style={{ textDecoration: 'none' }} class="nav-link color" to="/admin"> Admin</Link>
+                            </li>
+                        }
                         <li class="nav-item">
                             <Link style={{ textDecoration: 'none' }} class="nav-link color" to="/checkOut/:title">CheckOut</Link>
                         </li>
