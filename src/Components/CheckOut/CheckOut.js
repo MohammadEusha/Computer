@@ -55,7 +55,7 @@ const CheckOut = () => {
             <div>
                 <Navbar></Navbar>
                 <div>
-                    <h3 className="mt-5 pt-5 text-center">Hi <span className="text-danger">{loggedInUser.name}</span>. Please Pay For Getting Your Services.If You Want To Update Your Information PLease Click On the Update Information Button.</h3>
+                    <h3 className="mt-5 pt-5 text-center container">Hi <span className="text-danger">{loggedInUser.name}</span>. Please Pay For Getting Your Services.If You Want To Update Your Information PLease Click On the Update Information Button.</h3>
                     <div className="d-grid text-center container mt-2">
                         <button onClick={() => setOrderedService(!orderedService)} variant="secondary" className="btn-lg  btn-block btn-danger" block>Update Information</button>
                     </div>
@@ -131,7 +131,7 @@ const CheckOut = () => {
             </div>
     }
     return (
-        <div style={{ backgroundColor: "#12161f", color: "white", height: "930px" }}>
+        <div style={{ backgroundColor: "#12161f", color: "white", height: "980px" }}>
             {display}
         </div >
     );

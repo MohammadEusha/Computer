@@ -59,7 +59,7 @@ const Admin = () => {
             });
     }
     return (
-        <div style={{ backgroundColor: "#12161f", height: "1200px", color: "white" }} className="row">
+        <div style={{ backgroundColor: "#12161f", height: "900px", color: "white" }} className="row">
             <div className="col-md-3 col-sm-6 col-12">
                 <Sidebar></Sidebar>
             </div>
