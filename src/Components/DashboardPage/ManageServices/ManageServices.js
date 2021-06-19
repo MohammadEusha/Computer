@@ -17,7 +17,7 @@ const ManageServices = () => {
 
     }, [manageServices])
     return (
-        <div style={{ backgroundColor: "#12161f", color: "white", height: "950px" }} className="pt-5">
+        <div style={{ backgroundColor: "#12161f", color: "white", height: "980px" }} className="pt-5">
 
             <DashboardNavbar></DashboardNavbar>
 

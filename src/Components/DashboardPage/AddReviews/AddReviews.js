@@ -58,7 +58,7 @@ const AddReviews = () => {
             });
     }
     return (
-        <div style={{ backgroundColor: "#12161f", height: "950px", color: "white" }} className="pt-5">
+        <div style={{ backgroundColor: "#12161f", height: "980px", color: "white" }} className="pt-5">
             <DashboardNavbar></DashboardNavbar>
 
 

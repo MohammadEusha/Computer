@@ -60,7 +60,7 @@ const Admin = () => {
             });
     }
     return (
-        <div style={{ backgroundColor: "#12161f", height: "950px", color: "white" }} className="pt-5">
+        <div style={{ backgroundColor: "#12161f", height: "980px", color: "white" }} className="pt-5">
             <DashboardNavbar></DashboardNavbar>
             <div className="container mt-5">
                 <div className="text-center pt-5">
