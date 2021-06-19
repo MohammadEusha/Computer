@@ -16,12 +16,12 @@ const ManageServices = () => {
 
     }, [manageServices])
     return (
-        <div style={{ backgroundColor: "#12161f", color: "white", height: "1200px" }} className="row">
+        <div style={{ backgroundColor: "#12161f", color: "white", height: "950px" }} className="row">
             <div className="col-md-3 col-sm-6 col-12">
                 <Sidebar></Sidebar>
             </div>
             <div className="col-md-9 col-sm-12 col-12 mt-5">
-                <h1 className="text-center">HI {loggedInUser.name}...You Have Total {manageServices.length} Service ....!!!!!</h1>
+                <h1>HI {loggedInUser.name}...You Have Total {manageServices.length} Service ....!!!!!</h1>
                 <div className="row d-flex justify-content-start">
                     {
                         manageServices.map(services => <ManageServicesDetails services={services}></ManageServicesDetails>)

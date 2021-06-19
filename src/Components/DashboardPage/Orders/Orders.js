@@ -14,7 +14,7 @@ const Orders = () => {
 
     return (
         <div>
-            <h1 className="mt-5 mb-5 text-center">HI {loggedInUser.name}...You Have Bought {orderServices.length} Service Total....!!!!!</h1>
+            <h1 className="mt-5 mb-5 text-center">HI {loggedInUser.displayName}...You Have Bought {orderServices.length} Service Total....!!!!!</h1>
 
             <table className="table mt-5 table-dark">
                 <thead>

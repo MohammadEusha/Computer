@@ -4,7 +4,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const Dashboard = () => {
     return (
-        <div style={{ backgroundColor: "#12161f", color: "white", height: "900px" }} >
+        <div style={{ backgroundColor: "#12161f", color: "white", height: "950px" }} >
             <div className="row ">
                 <div className="col-md-3 col-sm-6 col-12">
                     <Sidebar></Sidebar>

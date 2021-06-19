@@ -38,7 +38,7 @@ const AddAdmin = () => {
             })
     };
     return (
-        <div style={{ backgroundColor: "#12161f", height: "900px", color: "white" }}>
+        <div style={{ backgroundColor: "#12161f", height: "950px", color: "white" }}>
             <div className="row ">
                 <div className="col-md-3 col-sm-6 col-12">
                     <Sidebar></Sidebar>
@@ -60,7 +60,7 @@ const AddAdmin = () => {
                             <button className="mt-4  btn btn-danger btn-lg btn-block" type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Admin</button>
                         </div>
                     </form>
-                </div>
+                </div>z`1
             </div>
         </div>
     );
