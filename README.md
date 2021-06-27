@@ -16,6 +16,8 @@ The Website is about your computer repair services . In this site you will find 
 
 • Google Sign-In
 
+• Email password Sign In 
+
 • Admin Panel
 
 • Customer Panel
