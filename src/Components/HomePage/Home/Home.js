@@ -18,7 +18,7 @@ const Home = () => {
             </div>
             <div className="p-3">
                 <About></About>
-                <Repair></Repair>
+                {/* <Repair></Repair> */}
                 <ServiceAreas></ServiceAreas>
                 <ExpertTeam></ExpertTeam>
 

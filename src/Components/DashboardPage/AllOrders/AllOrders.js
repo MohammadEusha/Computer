@@ -27,7 +27,7 @@ const AllOrders = () => {
             <div className="container mt-5 ">
                 <h1 className="pt-5 text-center">HI <span className="text-danger">{loggedInUser.name}</span>...You Have  Total  {allOrders.length} Orders Pending....!!!!!</h1>
 
-                <div className="row d-flex justify-content-center">
+                <div className="row ms-1">
                     {
                         allOrders.map(allOrder => <AllOrdersDetails allOrder={allOrder}></AllOrdersDetails>)
                     }

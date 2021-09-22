@@ -1,6 +1,7 @@
 .header {
   position: relative;
-  background-image: url("../../../Images/banner\ 1.jpg");
+  overflow-x: hidden;
+  background-image: url("../../../Images//Optimized-banner\ 1\ \(2\).jpg");
   height: 1000px;
   background-size: cover;
   background-repeat: no-repeat;

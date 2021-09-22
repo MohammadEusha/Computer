@@ -66,12 +66,12 @@ const AddReviews = () => {
                 <div className="text-center  pt-5">
                     <h1>HI <span className="text-danger">{loggedInUser.name}</span>....Add Reviews Here ....!!!!</h1>
                 </div>
-                <form className="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="col-md-6">
+                <form className="row mt-5" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="col-md-6 mt-3">
                         <label for="name" className="form-label"><h4>Your Name</h4></label>
                         <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Name" name="name" ref={register} className="form-control text-light" id="inputEmail4" />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mt-3">
                         <label for="from" className="form-label"><h4>Place You Live</h4></label>
                         <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Your Location" name="from" className="form-control text-light" ref={register} id="inputPassword4" />
                     </div>

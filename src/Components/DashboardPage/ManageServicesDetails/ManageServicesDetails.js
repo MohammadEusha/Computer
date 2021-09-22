@@ -23,11 +23,11 @@ const ManageServicesDetails = (props) => {
         console.log(id)
     }
     return (
-        <ul className="list-group col-md-3 focus mt-3 m-1">
+        <ul className="list-group col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 focus mt-3">
             <li className="list-group-item list-group-item-dark"><span className="fw-bolder text-dark">Service Name : {title} </span></li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Service Price : {price} $</span> </li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Service Description : {description}</span> </li>
-            <li onClick={() => handleDelete(_id)} className="list-group-item "><span className="btn btn-outline-danger fw-bolder text-dark"><FontAwesomeIcon icon={faTrashAlt} />  Delete Service</span></li>
+            <li onClick={() => handleDelete(_id)} className="list-group-item d-grid"><span className="btn btn-outline-danger  fw-bolder text-dark"><FontAwesomeIcon icon={faTrashAlt} />  Delete Service</span></li>
 
         </ul>
     );

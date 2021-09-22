@@ -66,17 +66,17 @@ const Admin = () => {
                 <div className="text-center pt-5">
                     <h1>HI <span className="text-danger">{loggedInUser.name}</span>...Add Service Details Here ....!!!!</h1>
                 </div>
-                <form className="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="col-md-6">
+                <form className="row mt-5" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="col-md-6 mt-3">
                         <label for="title" className="form-label"><h4>Service Name</h4></label>
                         <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Service Name" name="title" ref={register} className="form-control text-light" />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mt-3">
                         <label for="description" className="form-label"><h4>Service Details</h4></label>
                         <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Service Details" name="description" className="form-control text-light" ref={register} />
                     </div>
                     <div className="col-md-6 mt-3">
-                        <label for="price" className="form-label"><h4>Price</h4></label>
+                        <label for="price" className="form-label"><h4>Service Price</h4></label>
                         <input style={{ backgroundColor: "#050c1f" }} placeholder="Write Service Price" name="price" className="form-control text-light" ref={register} />
                     </div>
                     <div className="col-md-6 mt-3">

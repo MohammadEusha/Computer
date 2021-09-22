@@ -38,15 +38,16 @@ const AllOrdersDetails = (props) => {
     }
     return (
 
-        <ul className="list-group  focus col-md-4 col-sm-12 mt-3">
+        <ul className="list-group  focus col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-3">
             <li className="list-group-item list-group-item-dark"><span className="fw-bolder text-dark">Customer Name : {name} </span></li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Service Name : {title} </span> </li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Service Price : {price} $</span> </li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Description : {description}</span> </li>
             <li className="list-group-item "><span className="fw-bolder text-dark">Orders Placed At : {(new Date(orderTime).toDateString('dd/MM/yyyy'))}</span> </li>
+
             <li className="list-group-item d-flex justify-content-center">
                 {status !== "pending" && <button onClick={() => handleUpdate('Pending', _id)} className="btn btn-outline-danger fw-bold text-dark ms-2"><FontAwesomeIcon icon={faHourglassStart} /> Pending</button>}
-                {status !== "on going" && <button onClick={() => handleUpdate('On Going', _id)} className="btn btn-outline-secondary fw-bold ms-2 text-dark"><FontAwesomeIcon icon={faRocket} /> On Going</button>}
+                {status !== "on going" && <button onClick={() => handleUpdate('On Going', _id)} className="btn btn-outline-secondary fw-bold ms-2 text-dark"><FontAwesomeIcon icon={faRocket} />Going</button>}
                 {status !== "done" && <button onClick={() => handleUpdate('Done', _id)} className="btn btn-outline-success text-dark fw-bold ms-2"><FontAwesomeIcon icon={faCheckCircle} /> Done</button>}
             </li>
 

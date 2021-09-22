@@ -14,11 +14,10 @@ const ServiceInfo = (props) => {
         history.push(`/checkOut/${title}`)
     }
     return (
-        <div className="card mb-3 my-3 focus mx-3 col-md-5 border border-3">
+        <div className="card mb-3 my-3 focus mx-3 col-xxl-5 col-xl-5 col-lg-10 col-md-10 col-sm-12 col-xs-12 border border-3">
             <div style={{ backgroundColor: "#050c1a" }} className="row ">
                 <div className="col-md-6 d-grid">
                     <img src={image} alt="..." className="img-fluid my-3" />
-                    <button onClick={() => handleBuy(title)} className="btn btn-danger  btn-lg mb-3"><FontAwesomeIcon icon={faTools} /> Repair</button>
                 </div>
                 <div className="col-md-6">
                     <div className="card-body">
@@ -31,6 +30,7 @@ const ServiceInfo = (props) => {
                         <h5 className="card-text">Price : {price} $</h5>
                     </div>
                 </div>
+                <button onClick={() => handleBuy(title)} className="btn btn-danger btn-lg"><FontAwesomeIcon icon={faTools} /> Repair</button>
             </div>
         </div>
 
