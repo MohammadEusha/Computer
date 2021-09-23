@@ -62,7 +62,7 @@ const AddReviews = () => {
             <DashboardNavbar></DashboardNavbar>
 
 
-            <div className="container pt-5">
+            <div className="container mt-5">
                 <div className="text-center  pt-5">
                     <h1>HI <span className="text-danger">{loggedInUser.name}</span>....Add Reviews Here ....!!!!</h1>
                 </div>
